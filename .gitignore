@@ -1,0 +1,23 @@
+# Dependency directories
+node_modules/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Databases
+*.sqlite
+db.sqlite
+
+# Build outputs
+dist/
+build/
+bin/
+
+# Editor/system directories
+.idea/
+.vscode/
+.kiro/
+Thumbs.db
+Desktop.ini
