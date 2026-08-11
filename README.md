@@ -1,7 +1,7 @@
 # Fundsroom Operations Intelligence
 
 A compact, production-minded ERP/CRM system designed for wholesale and distribution business operations. It connects customer relationships, sales order drafting, and real-time inventory levels to an intelligence layer that explains operational risks and simulates future demand.
-
+https://fundsroom-erp-pied.vercel.app/
 ## Tech Stack
 - **Frontend**: React, TypeScript, Vite, Vanilla CSS (Higgsfield-inspired premium dark theme)
 - **Backend**: Node.js, Express, TypeScript, REST APIs
