@@ -148,18 +148,10 @@ export const AppProvider: React.FC<{
       const currentToken =
         localStorage.getItem('token');
 
-      /*
-       * Railway backend
-       *
-       * Frontend is deployed on Vercel.
-       * Backend is deployed on Railway.
-       */
+      // Read the Railway backend URL from Vite env (set VITE_API_URL on Vercel).
+      // Falls back to '' so that relative URLs work in local dev (no base = same origin).
       const apiBaseUrl =
-        'https://fundsroom-erp-production-0ee1.up.railway.app';
-
-      // Remove trailing slash
-      const cleanBaseUrl =
-        apiBaseUrl.replace(/\/+$/, '');
+        (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
 
       // Make sure endpoint starts with /
       const cleanEndpoint =
@@ -167,9 +159,10 @@ export const AppProvider: React.FC<{
           ? endpoint
           : `/${endpoint}`;
 
-      // Final API URL
-      const url =
-        `${cleanBaseUrl}${cleanEndpoint}`;
+      // Final API URL — no double-slash
+      const url = apiBaseUrl
+        ? `${apiBaseUrl}${cleanEndpoint}`
+        : cleanEndpoint;
 
       console.log('API Request:', url);
 
