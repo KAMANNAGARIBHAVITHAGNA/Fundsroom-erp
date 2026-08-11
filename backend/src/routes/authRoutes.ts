@@ -17,7 +17,7 @@ function getDisplayNameFromEmail(email: string): string {
 }
 
 router.post('/login', async (req: express.Request, res: Response) => {
-  const isDemoMode = process.env.DEMO_MODE === 'true' && process.env.NODE_ENV !== 'production';
+  const isDemoMode = process.env.DEMO_MODE === 'true';
   const { email, password } = req.body;
 
   if (!email || !password) {
